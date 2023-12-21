@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block context %}
+<form method="POST">
+
+    {% csrf_token %}
+    <div class="m-3">
+
+        <label>Address:</label>
+        <input type="text"  class="form-control" name="ad"><br>
+        <label>Phone:</label>
+        <input type="text"  class="form-control" name="ph"><br>
+        <label>Account Number:</label>
+        <input type="text"  class="form-control" name="an"><br>
+        <input type="submit">
+    </div>
+</form>
+{% endblock %}

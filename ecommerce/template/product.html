@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block context %}
+
+<h1>PRODUCT</h1>
+
+<img src="{{cate.img.url}}" width="80%" height="400px" style="display:block;margin-left:auto;margin-right:auto;">
+<h2 class="text-center">{{cate.name}}</h2>
+<p>{{cate.desc}}</p>
+
+
+<div class="container mb-5">
+
+  <div class="row">
+    {% for i in prod %}
+    <div class="col-lg-4 p-3">
+      <div class="card" style="width: 18rem;">
+
+        <img src="{{i.img.url}}" class="card-img-top" height="200px" alt="...">
+        <div class="card-body">
+          <h5 class="card-title text-center">{{i.name}}</h5>
+          <h5 class="card-title text-center">{{i.price}}</h5>
+          <a href="{% url 'shop:prod' i.name %}" class="btn btn-primary" style="position:relative;left:30%;">DETAILS</a>
+        </div>
+      </div>
+    </div>
+
+    {% endfor %}
+
+  </div>
+
+
+</div>
+
+{% endblock %}
